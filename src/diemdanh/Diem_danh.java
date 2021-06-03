@@ -160,8 +160,8 @@ public class Diem_danh extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         int index = jComboBox1.getSelectedIndex();
+
         if (index > 0) {
-            String selectedValue = jComboBox1.getItemAt(index);
             DefaultTableModel model = new DefaultTableModel(new String[]{"STT", "Họ Và Tên", "Mã Số Sinh Viên", "Lớp", "Buổi 1", "Buổi 2", "Buổi 3", "Buổi 4", "Buổi 5", "Số Buổi Vắng"}, 0);
             Con = ConnectDB.ConnectDb();
             try {

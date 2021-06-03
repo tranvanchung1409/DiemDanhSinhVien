@@ -32,8 +32,8 @@ public class ConnectDB {
             return null;
         }
     }
-    
-        private boolean closeDB() {
+
+    private boolean closeDB() {
         boolean res = true;
         try {
             if (!Con.isClosed()) {
