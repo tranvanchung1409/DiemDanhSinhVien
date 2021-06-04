@@ -161,29 +161,75 @@ public class Diem_danh extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         int index = jComboBox1.getSelectedIndex();
 
+        // Clear table
+        danhsach.setModel(new DefaultTableModel());
+        // Model for Table
+        DefaultTableModel model = new DefaultTableModel() {
+            public Class<?> getColumnClass(int column) {
+                switch (column) {
+                    case 0:
+                        return int.class;
+                    case 1:
+                        return String.class;
+                    case 2:
+                        return String.class;
+                    case 3:
+                        return String.class;
+                    case 4:
+                        return Boolean.class;
+                    case 5:
+                        return Boolean.class;
+                    case 6:
+                        return Boolean.class;
+                    case 7:
+                        return Boolean.class;
+                    case 8:
+                        return Boolean.class;
+                    case 9:
+                        return int.class;
+                    default:
+                        return String.class;
+                }
+            }
+        };
+        danhsach.setModel(model);
+
+        // Add Column
+        model.addColumn("STT");
+        model.addColumn("Họ Và Tên");
+        model.addColumn("Mã Số Sinh Viên");
+        model.addColumn("Lớp");
+        model.addColumn("Buổi 1");
+        model.addColumn("Buổi 2");
+        model.addColumn("Buổi 3");
+        model.addColumn("Buổi 4");
+        model.addColumn("Buổi 5");
+        model.addColumn("Số Buổi Vắng");
+        
         if (index > 0) {
-            DefaultTableModel model = new DefaultTableModel(new String[]{"STT", "Họ Và Tên", "Mã Số Sinh Viên", "Lớp", "Buổi 1", "Buổi 2", "Buổi 3", "Buổi 4", "Buổi 5", "Số Buổi Vắng"}, 0);
             Con = ConnectDB.ConnectDb();
             try {
                 St = Con.createStatement();
                 Rs = St.executeQuery("Select * from diemdanh.class_" + index + "");
-                while (Rs.next()) {
-                    String d = Rs.getString("STT");
-                    String e = Rs.getString("Name");
-                    String f = Rs.getString("Id");
-                    String g = Rs.getString("Class");
-                    String h = Rs.getString("B1");
-                    String i = Rs.getString("B2");
-                    String j = Rs.getString("B3");
-                    String k = Rs.getString("B4");
-                    String l = Rs.getString("B5");
-                    String m = Rs.getString("Total");
-                    model.addRow(new Object[]{d, e, f, g, h, i, j, k, l, m});
+                int row = 0;
+
+                while ((Rs != null) && (Rs.next())) {
+                    model.addRow(new Object[0]);
+                    model.setValueAt(Rs.getInt("STT"), row, 0);
+                    model.setValueAt(Rs.getString("Name"), row, 1);
+                    model.setValueAt(Rs.getString("Id"), row, 2);
+                    model.setValueAt(Rs.getString("Class"), row, 3);
+                    model.setValueAt(false, row, 4); // Checkbox
+                    model.setValueAt(false, row, 5); // Checkbox
+                    model.setValueAt(false, row, 6); // Checkbox
+                    model.setValueAt(false, row, 7); // Checkbox
+                    model.setValueAt(false, row, 8); // Checkbox
+                    model.setValueAt(Rs.getInt("Total"), row, 9);
+                    row++;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            danhsach.setModel(model);
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -204,13 +250,17 @@ public class Diem_danh extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Diem_danh.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Diem_danh.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Diem_danh.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Diem_danh.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Diem_danh.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Diem_danh.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Diem_danh.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Diem_danh.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

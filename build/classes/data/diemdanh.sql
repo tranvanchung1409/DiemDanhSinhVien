@@ -27,14 +27,14 @@ CREATE TABLE `class_1` (
   `Name` varchar(45) COLLATE utf8_bin NOT NULL,
   `Id` varchar(45) COLLATE utf8_bin NOT NULL,
   `Class` varchar(45) COLLATE utf8_bin NOT NULL,
-  `B1` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B2` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B3` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B4` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B5` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Total` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `B1` int DEFAULT NULL,
+  `B2` int DEFAULT NULL,
+  `B3` int DEFAULT NULL,
+  `B4` int DEFAULT NULL,
+  `B5` int DEFAULT NULL,
+  `Total` int DEFAULT NULL,
   PRIMARY KEY (`STT`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `class_1` (
 
 LOCK TABLES `class_1` WRITE;
 /*!40000 ALTER TABLE `class_1` DISABLE KEYS */;
-INSERT INTO `class_1` VALUES (1,'Chung','20182388','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `class_1` VALUES (1,'Chung','20182388','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL),(2,'Hoa','20182828','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL),(3,'Viet','2018738','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `class_1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,12 +187,12 @@ CREATE TABLE `class_6` (
   `Name` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `Id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `Class` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B1` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B2` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B3` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B4` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B5` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Total` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `B1` int DEFAULT NULL,
+  `B2` int DEFAULT NULL,
+  `B3` int DEFAULT NULL,
+  `B4` int DEFAULT NULL,
+  `B5` int DEFAULT NULL,
+  `Total` int DEFAULT NULL,
   PRIMARY KEY (`STT`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -216,4 +216,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-03 18:24:02
+-- Dump completed on 2021-06-04 23:14:24
