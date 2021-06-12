@@ -95,7 +95,7 @@ public class Diem_danh extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Điểm Danh Sinh Viên");
 
-        jButton3.setText("Apply");
+        jButton3.setText("Áp dụng");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
