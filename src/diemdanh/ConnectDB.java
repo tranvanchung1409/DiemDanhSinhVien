@@ -1,34 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package diemdanh;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.SQLException;
 
-/**
- *
- * @author ADMIN
- */
 public class ConnectDB {
 
     private Connection Con;
-    private Statement St;
 
     public static Connection ConnectDb() {
         String driver = "com.mysql.cj.jdbc.Driver";
-        String connection = "jdbc:mysql://localhost:3306/diemdanh?useSSL=false";
+        String connection = "jdbc:mysql://localhost:3306/btlphamhoa?allowPublicKeyRetrieval=true&useSSL=false";
         String user = "root";
-        String password = "root";
+        String password = "06012000";
         try {
             Class.forName(driver);
-            Connection Con = DriverManager.getConnection(connection, user, password);;
+            Connection Con = DriverManager.getConnection(connection, user, password);
             return Con;
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException | SQLException e) {
             return null;
         }
     }
@@ -39,7 +28,7 @@ public class ConnectDB {
             if (!Con.isClosed()) {
                 Con.close();
             }
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             res = false;
         }
         return res;

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: localhost    Database: diemdanh
+-- Host: localhost    Database: btlphamhoa
 -- ------------------------------------------------------
--- Server version	8.0.23
+-- Server version	8.0.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,17 +24,17 @@ DROP TABLE IF EXISTS `class_1`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `class_1` (
   `STT` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) COLLATE utf8_bin NOT NULL,
-  `Id` varchar(45) COLLATE utf8_bin NOT NULL,
-  `Class` varchar(45) COLLATE utf8_bin NOT NULL,
-  `B1` int DEFAULT NULL,
-  `B2` int DEFAULT NULL,
-  `B3` int DEFAULT NULL,
-  `B4` int DEFAULT NULL,
-  `B5` int DEFAULT NULL,
-  `Total` int DEFAULT NULL,
+  `Name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Id` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Class` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `B1` tinyint DEFAULT NULL,
+  `B2` tinyint DEFAULT NULL,
+  `B3` tinyint DEFAULT NULL,
+  `B4` tinyint DEFAULT NULL,
+  `B5` tinyint DEFAULT NULL,
+  `Total` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`STT`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `class_1` (
 
 LOCK TABLES `class_1` WRITE;
 /*!40000 ALTER TABLE `class_1` DISABLE KEYS */;
-INSERT INTO `class_1` VALUES (1,'Chung','20182388','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL),(2,'Hoa','20182828','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL),(3,'Viet','2018738','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `class_1` VALUES (1,'Chung','20182388','ĐT-10',1,1,1,1,1,'0'),(2,'Nhu','20172889','DDT12',0,1,1,0,0,'3'),(3,'Hoa','20122276','Dt 02',0,1,1,1,1,'1');
 /*!40000 ALTER TABLE `class_1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,14 +56,14 @@ DROP TABLE IF EXISTS `class_2`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `class_2` (
   `STT` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Class` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B1` int DEFAULT NULL,
-  `B2` int DEFAULT NULL,
-  `B3` int DEFAULT NULL,
-  `B4` int DEFAULT NULL,
-  `B5` int DEFAULT NULL,
+  `Name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Id` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Class` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `B1` tinyint DEFAULT NULL,
+  `B2` tinyint DEFAULT NULL,
+  `B3` tinyint DEFAULT NULL,
+  `B4` tinyint DEFAULT NULL,
+  `B5` tinyint DEFAULT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`STT`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -75,7 +75,7 @@ CREATE TABLE `class_2` (
 
 LOCK TABLES `class_2` WRITE;
 /*!40000 ALTER TABLE `class_2` DISABLE KEYS */;
-INSERT INTO `class_2` VALUES (1,'Viet','20182933','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `class_2` VALUES (1,'Viet','20182933','ĐT-10',1,0,0,1,0,3);
 /*!40000 ALTER TABLE `class_2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,14 +88,14 @@ DROP TABLE IF EXISTS `class_3`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `class_3` (
   `STT` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Class` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B1` int DEFAULT NULL,
-  `B2` int DEFAULT NULL,
-  `B3` int DEFAULT NULL,
-  `B4` int DEFAULT NULL,
-  `B5` int DEFAULT NULL,
+  `Name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Id` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Class` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `B1` tinyint DEFAULT NULL,
+  `B2` tinyint DEFAULT NULL,
+  `B3` tinyint DEFAULT NULL,
+  `B4` tinyint DEFAULT NULL,
+  `B5` tinyint DEFAULT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`STT`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -107,7 +107,7 @@ CREATE TABLE `class_3` (
 
 LOCK TABLES `class_3` WRITE;
 /*!40000 ALTER TABLE `class_3` DISABLE KEYS */;
-INSERT INTO `class_3` VALUES (1,'Dat','20182912','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `class_3` VALUES (1,'Dat','20182912','ĐT-10',1,1,1,1,1,0);
 /*!40000 ALTER TABLE `class_3` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,14 +120,14 @@ DROP TABLE IF EXISTS `class_4`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `class_4` (
   `STT` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Class` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B1` int DEFAULT NULL,
-  `B2` int DEFAULT NULL,
-  `B3` int DEFAULT NULL,
-  `B4` int DEFAULT NULL,
-  `B5` int DEFAULT NULL,
+  `Name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Id` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Class` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `B1` tinyint DEFAULT NULL,
+  `B2` tinyint DEFAULT NULL,
+  `B3` tinyint DEFAULT NULL,
+  `B4` tinyint DEFAULT NULL,
+  `B5` tinyint DEFAULT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`STT`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -152,14 +152,14 @@ DROP TABLE IF EXISTS `class_5`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `class_5` (
   `STT` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Class` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B1` int DEFAULT NULL,
-  `B2` int DEFAULT NULL,
-  `B3` int DEFAULT NULL,
-  `B4` int DEFAULT NULL,
-  `B5` int DEFAULT NULL,
+  `Name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Id` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Class` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `B1` tinyint DEFAULT NULL,
+  `B2` tinyint DEFAULT NULL,
+  `B3` tinyint DEFAULT NULL,
+  `B4` tinyint DEFAULT NULL,
+  `B5` tinyint DEFAULT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`STT`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -184,15 +184,15 @@ DROP TABLE IF EXISTS `class_6`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `class_6` (
   `STT` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `Class` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `B1` int DEFAULT NULL,
-  `B2` int DEFAULT NULL,
-  `B3` int DEFAULT NULL,
-  `B4` int DEFAULT NULL,
-  `B5` int DEFAULT NULL,
-  `Total` int DEFAULT NULL,
+  `Name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Id` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Class` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `B1` tinyint DEFAULT NULL,
+  `B2` tinyint DEFAULT NULL,
+  `B3` tinyint DEFAULT NULL,
+  `B4` tinyint DEFAULT NULL,
+  `B5` tinyint DEFAULT NULL,
+  `Total` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`STT`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -203,7 +203,7 @@ CREATE TABLE `class_6` (
 
 LOCK TABLES `class_6` WRITE;
 /*!40000 ALTER TABLE `class_6` DISABLE KEYS */;
-INSERT INTO `class_6` VALUES (1,'Hòa','201823923','ĐT-10',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `class_6` VALUES (1,'Hòa','201823923','ĐT-10',0,0,0,1,1,'3');
 /*!40000 ALTER TABLE `class_6` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -216,4 +216,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-04 23:14:24
+-- Dump completed on 2021-06-11 11:02:28
